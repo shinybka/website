@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+    background-color: #111; /* Dark background color */
+    color: #fff; /* Light text color */
+}
+
+.image-box {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: #333; /* Darker background color for the box */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.5s ease-in-out; /* Slower transition effect */
+}
+
+.image-box:hover {
+    background-color: #1a5276; /* Dark blue color */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+button {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #3498db; /* Initial dark blue color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #2980b9; /* Lighter blue color on hover */
+}
