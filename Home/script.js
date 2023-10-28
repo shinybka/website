@@ -1,30 +1,13 @@
-function downloadImage() {
-    // For simplicity, this example uses a placeholder link. Replace it with the actual image URL.
-    var imageUrl = 'image1.jpg';
-    
-    // Create a temporary link element
-    var link = document.createElement('a');
-    
-    // Set the download attribute and href
-    link.download = 'downloaded_image.jpg';
-    link.href = imageUrl;
-    
-    // Append the link to the document
-    document.body.appendChild(link);
-    
-    // Trigger a click on the link to start the download
-    link.click();
-    
-    // Remove the link from the document
-    document.body.removeChild(link);
-}
+function toggleFullscreen() {
+  const imageBox = document.querySelector('.image-box');
 
-function toggleFullscreen(image) {
-    if (!document.fullscreenElement) {
-        image.requestFullscreen().catch(err => {
-            console.error(`Error attempting to enable full-screen mode: ${err.message}`);
-        });
-    } else {
-        document.exitFullscreen();
-    }
+  if (!document.fullscreenElement) {
+    imageBox.requestFullscreen().catch(err => {
+      console.error(`Error attempting to enable fullscreen: ${err.message}`);
+    });
+    imageBox.classList.add('fullscreen'); // Add a class when in fullscreen
+  } else {
+    document.exitFullscreen();
+    imageBox.classList.remove('fullscreen'); // Remove the class when exiting fullscreen
+  }
 }
