@@ -1,69 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    overflow: hidden;
+  display: flex;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: #151515;
 }
-
-.background {
-    background-color: #121212;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.login-form {
+  position: relative;
+  width: 370px;
+  height: auto;
+  background: #1b1b1b;
+  padding: 40px 35px 60px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: inset 0 0 1px #272727;
 }
-
+.text {
+  font-size: 30px;
+  color: #c7c7c7;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
 form {
-    max-width: 300px;
-    margin: auto;
+  margin-top: 40px;
 }
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #bb86fc;
+form .field {
+  margin-top: 20px;
+  display: flex;
 }
-
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    background-color: #424242;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
+.field .fas {
+  height: 50px;
+  width: 60px;
+  color: #868686;
+  font-size: 20px;
+  line-height: 50px;
+  border: 1px solid #444;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  background: linear-gradient(#333, #222);
 }
-
+.field input,
+form button {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 19px;
+  color: #868686;
+  padding: 0 15px;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #444;
+  caret-color: #339933;
+  background: linear-gradient(#333, #222);
+}
+input:focus {
+  color: #339933;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1);
+  background: linear-gradient(#333933, #222922);
+  animation: glow 0.8s ease-out infinite alternate;
+}
+@keyframes glow {
+  0% {
+    border-color: #339933;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    border-color: #6f6;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.6),
+      inset 0 0 10px rgba(0, 255, 0, 0.4);
+  }
+}
 button {
-    background-color: #03a9f4;
-    color: #ffffff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  margin-top: 30px;
+  border-radius: 5px !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
-
 button:hover {
-    background-color: #0288d1;
+  color: #339933;
+  border: 1px solid #339933;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3), 0 0 10px rgba(0, 255, 0, 0.2),
+    0 0 15px rgba(0, 255, 0, 0.1), 0 2px 0 black;
 }
-
-.moving-object {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: #03a9f4;
-    filter: blur(20px);
-    border-radius: 50%;
-    animation: moveObject 10s infinite alternate ease-in-out;
+.link {
+  margin-top: 25px;
+  color: #868686;
 }
-
-@keyframes moveObject {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(500px, 500px);
-    }
+.link a {
+  color: #339933;
+  text-decoration: none;
+}
+.link a:hover {
+  text-decoration: underline;
 }
